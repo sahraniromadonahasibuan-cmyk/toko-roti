@@ -1,0 +1,423 @@
+/* =========================================================
+   LOGIN MEWAH — Roti Kayu Manis
+   Tema: gold-on-dark, split screen boutique
+   ========================================================= */
+
+:root{
+  --gold:        #D9A53B;
+  --gold-light:  #F6D87A;
+  --gold-deep:   #8C5A1E;
+  --ink:         #0F0B08;
+  --ink-soft:    #1C140D;
+  --ink-card:    #1A1410;
+  --cream-txt:   #F3E9D8;
+  --cream-dim:   #B9A98F;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Karla", sans-serif;
+}
+
+*{ box-sizing: border-box; }
+
+.lux-body{
+  margin: 0;
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--cream-txt);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+a{ text-decoration: none; }
+
+/* fine film-grain texture over the whole dark page */
+.lux-grain{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+.lux-home-link{
+  position: fixed;
+  top: 1.6rem;
+  left: 1.8rem;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cream-dim);
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(217,165,59,0.25);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.lux-home-link:hover{
+  color: var(--gold-light);
+  border-color: rgba(217,165,59,0.6);
+  background: rgba(217,165,59,0.08);
+}
+
+/* =========================================================
+   LAYOUT — split screen
+   ========================================================= */
+.lux-screen{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+}
+
+/* ---------- LEFT: visual panel ---------- */
+.lux-visual{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(2rem, 5vw, 4rem);
+  background:
+    radial-gradient(circle at 70% 20%, rgba(217,165,59,0.16), transparent 60%),
+    linear-gradient(160deg, #18110B 0%, #0F0B08 55%, #060403 100%);
+  overflow: hidden;
+}
+
+.lux-glow{
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(246,216,122,0.25), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.lux-rings{ position: absolute; inset: 0; pointer-events: none; }
+.lux-rings span{
+  position: absolute;
+  border: 1px solid rgba(217,165,59,0.12);
+  border-radius: 50%;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%,-50%);
+}
+.lux-rings span:nth-child(1){ width: 420px; height: 420px; animation: pulse-ring 7s ease-in-out infinite; }
+.lux-rings span:nth-child(2){ width: 560px; height: 560px; animation: pulse-ring 7s ease-in-out infinite 1.2s; }
+.lux-rings span:nth-child(3){ width: 700px; height: 700px; animation: pulse-ring 7s ease-in-out infinite 2.4s; }
+@keyframes pulse-ring{
+  0%, 100%{ opacity: 0.25; transform: translate(-50%,-50%) scale(0.98); }
+  50%{ opacity: 0.55; transform: translate(-50%,-50%) scale(1.02); }
+}
+
+.lux-visual-content{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: auto 0;
+}
+
+.lux-monogram{
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  color: var(--gold);
+  border: 1px solid rgba(217,165,59,0.4);
+  border-radius: 999px;
+  padding: 0.55rem 1.3rem;
+  margin-bottom: 2.4rem;
+}
+
+.lux-bread{
+  width: min(260px, 70%);
+  margin-bottom: 2.2rem;
+  animation: lux-float 6s ease-in-out infinite;
+}
+@keyframes lux-float{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+
+.lux-quote{
+  margin: 0 0 0.8rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--cream-txt);
+  max-width: 420px;
+}
+.lux-quote-tag{
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.lux-visual-footer{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding-top: 2rem;
+  border-top: 1px solid rgba(217,165,59,0.15);
+}
+.lux-stat{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.lux-stat strong{
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--gold-light);
+}
+.lux-stat span{
+  font-size: 0.72rem;
+  color: var(--cream-dim);
+  white-space: nowrap;
+}
+.lux-divider-dot{
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(217,165,59,0.4);
+}
+
+/* ---------- RIGHT: form panel ---------- */
+.lux-form-panel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.6rem, 4vw, 3rem);
+  background: var(--ink-soft);
+}
+
+.lux-form-card{
+  width: 100%;
+  max-width: 400px;
+}
+
+.lux-eyebrow{
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.7rem;
+}
+
+.lux-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  color: var(--cream-txt);
+  margin: 0 0 0.6rem;
+}
+
+.lux-sub{
+  font-size: 0.95rem;
+  color: var(--cream-dim);
+  margin: 0 0 2.2rem;
+  line-height: 1.55;
+}
+
+/* ---- floating-label fields ---- */
+.lux-form{ display: flex; flex-direction: column; gap: 1.6rem; }
+
+.lux-field{ position: relative; }
+.lux-field input{
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(217,165,59,0.3);
+  color: var(--cream-txt);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0 0.7rem;
+  outline: none;
+}
+.lux-field label{
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  font-size: 1rem;
+  color: var(--cream-dim);
+  pointer-events: none;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+.lux-field input:focus + label,
+.lux-field input:not(:placeholder-shown) + label{
+  top: -0.95rem;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+}
+.lux-field-line{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transition: width 0.3s ease;
+}
+.lux-field input:focus ~ .lux-field-line{ width: 100%; }
+
+.lux-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-top: -0.4rem;
+}
+.lux-remember{
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--cream-dim);
+  cursor: pointer;
+  user-select: none;
+}
+.lux-remember input{ position: absolute; opacity: 0; width: 0; height: 0; }
+.lux-checkbox{
+  width: 16px; height: 16px;
+  border: 1px solid rgba(217,165,59,0.5);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.lux-remember input:checked + .lux-checkbox{
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.lux-remember input:checked + .lux-checkbox::after{
+  content: "";
+  width: 8px; height: 5px;
+  border-left: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: rotate(-45deg) translate(0.5px, -1px);
+}
+
+.lux-link{ color: var(--gold); font-weight: 600; }
+.lux-link:hover{ color: var(--gold-light); }
+.lux-link.strong{ text-decoration: underline; text-decoration-color: rgba(217,165,59,0.4); }
+
+.lux-btn{
+  margin-top: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, var(--gold-deep));
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px -8px rgba(217,165,59,0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.lux-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px -8px rgba(217,165,59,0.6);
+}
+.lux-btn svg{ transition: transform 0.2s ease; }
+.lux-btn:hover svg{ transform: translateX(3px); }
+
+.lux-note{
+  font-size: 0.76rem;
+  color: var(--cream-dim);
+  text-align: center;
+  margin: 0;
+  opacity: 0.75;
+}
+
+.lux-or{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.8rem 0 1.3rem;
+  font-size: 0.78rem;
+  color: var(--cream-dim);
+}
+.lux-or::before, .lux-or::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(217,165,59,0.18);
+}
+.lux-or span{ padding: 0 0.8rem; white-space: nowrap; }
+
+.lux-social{ display: flex; gap: 0.9rem; }
+.lux-social-btn{
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(217,165,59,0.25);
+  border-radius: var(--radius, 10px);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  color: var(--cream-txt);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.lux-social-btn:hover{
+  background: rgba(217,165,59,0.08);
+  border-color: rgba(217,165,59,0.5);
+}
+
+.lux-switch{
+  text-align: center;
+  margin: 2rem 0 0;
+  font-size: 0.9rem;
+  color: var(--cream-dim);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 980px){
+  .lux-screen{ grid-template-columns: 1fr; }
+  .lux-visual{ min-height: 46vh; padding-top: 5.5rem; }
+  .lux-bread{ width: min(180px, 50%); margin-bottom: 1.4rem; }
+  .lux-quote{ font-size: 1.05rem; }
+  .lux-visual-footer{ flex-wrap: wrap; }
+}
+
+@media (max-width: 480px){
+  .lux-home-link{ top: 1rem; left: 1rem; font-size: 0.78rem; padding: 0.45rem 0.85rem; }
+  .lux-visual{ padding-inline: 1.4rem; }
+  .lux-form-panel{ padding-inline: 1.4rem; }
+  .lux-social{ flex-direction: column; }
+}
