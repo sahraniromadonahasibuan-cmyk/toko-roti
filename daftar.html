@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar — Roti Kayu Manis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="daftar.css">
+</head>
+<body class="lux-body">
+
+<div class="lux-grain"></div>
+
+<a href="index.html" class="lux-home-link">
+  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg>
+  Kembali ke Beranda
+</a>
+
+<main class="lux-screen">
+
+  <!-- ===== PANEL KIRI — VISUAL ===== -->
+  <section class="lux-visual reg-visual">
+    <div class="lux-glow"></div>
+    <div class="lux-rings" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="lux-visual-content">
+      <span class="lux-monogram">RKM</span>
+
+      <svg class="lux-bread" viewBox="0 0 400 400" aria-hidden="true">
+        <defs>
+          <radialGradient id="breadGold2" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#F6D87A"/>
+            <stop offset="55%" stop-color="#D9A53B"/>
+            <stop offset="100%" stop-color="#8C5A1E"/>
+          </radialGradient>
+          <filter id="softShadow2" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.45"/>
+          </filter>
+        </defs>
+        <ellipse cx="200" cy="332" rx="120" ry="16" fill="#000" opacity="0.3"/>
+        <g filter="url(#softShadow2)">
+          <circle cx="155" cy="200" r="68" fill="url(#breadGold2)"/>
+          <circle cx="155" cy="200" r="68" fill="none" stroke="#5A3410" stroke-width="2" opacity="0.5"/>
+          <circle cx="250" cy="245" r="46" fill="url(#breadGold2)"/>
+          <circle cx="250" cy="245" r="46" fill="none" stroke="#5A3410" stroke-width="2" opacity="0.5"/>
+        </g>
+        <path d="M125 180c8-12 22-12 30 0M265 230c6-9 16-9 22 0" stroke="#5A3410" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+
+      <blockquote class="lux-quote">
+        “Daftar sekali, dan setiap kunjungan<br>terasa seperti pulang ke dapur sendiri.”
+      </blockquote>
+      <span class="lux-quote-tag">— Roti Kayu Manis, sejak 2014</span>
+    </div>
+
+    <div class="lux-visual-footer">
+      <div class="lux-stat"><strong>Gratis</strong><span>Daftar akun</span></div>
+      <div class="lux-divider-dot"></div>
+      <div class="lux-stat"><strong>1 menit</strong><span>Selesai isi form</span></div>
+      <div class="lux-divider-dot"></div>
+      <div class="lux-stat"><strong>Prioritas</strong><span>Info roti baru</span></div>
+    </div>
+  </section>
+
+  <!-- ===== PANEL KANAN — FORM ===== -->
+  <section class="lux-form-panel">
+    <div class="lux-form-card">
+      <span class="lux-eyebrow">Bergabung Bersama Kami</span>
+      <h1 class="lux-title">Buat Akun Baru</h1>
+      <p class="lux-sub">Daftar sekali, pesan roti favoritmu kapan saja tanpa isi data ulang.</p>
+
+      <div id="alertBox" class="lux-alert"></div>
+
+      <form class="lux-form" id="registerForm" novalidate>
+        <div class="lux-field">
+          <input type="text" id="nama" name="nama" placeholder=" " required autocomplete="name">
+          <label for="nama">Nama Lengkap</label>
+          <span class="lux-field-line"></span>
+        </div>
+
+        <div class="lux-field">
+          <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+          <label for="email">Alamat Email</label>
+          <span class="lux-field-line"></span>
+        </div>
+
+        <div class="lux-field">
+          <input type="password" id="password" name="password" placeholder=" " required minlength="8" autocomplete="new-password">
+          <label for="password">Kata Sandi</label>
+          <span class="lux-field-line"></span>
+        </div>
+
+        <div>
+          <div class="lux-strength" id="strengthBar">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="lux-strength-label" id="strengthLabel">Minimal 8 karakter</span>
+        </div>
+
+        <div class="lux-field">
+          <input type="password" id="konfirmasi" name="konfirmasi" placeholder=" " required minlength="8" autocomplete="new-password">
+          <label for="konfirmasi">Konfirmasi Kata Sandi</label>
+          <span class="lux-field-line"></span>
+        </div>
+
+        <button type="submit" class="lux-btn">
+          <span>Daftar Sekarang</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+
+        <p class="lux-note">Data disimpan di browser ini (localStorage) untuk keperluan demo tugas, bukan server sungguhan.</p>
+      </form>
+
+      <p class="lux-switch">
+        Sudah punya akun? <a href="login.html" class="lux-link strong">Masuk di sini</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<script src="auth.js"></script>
+<script>
+  const form = document.getElementById("registerForm");
+  const alertBox = document.getElementById("alertBox");
+  const passwordInput = document.getElementById("password");
+  const strengthBar = document.getElementById("strengthBar");
+  const strengthLabel = document.getElementById("strengthLabel");
+  const strengthSegments = strengthBar.querySelectorAll("span");
+
+  function showAlert(message, type) {
+    alertBox.textContent = message;
+    alertBox.className = "lux-alert show " + type;
+  }
+
+  function evaluateStrength(value) {
+    let score = 0;
+    if (value.length >= 8) score++;
+    if (/[A-Z]/.test(value)) score++;
+    if (/[0-9]/.test(value)) score++;
+    if (/[^A-Za-z0-9]/.test(value)) score++;
+
+    strengthSegments.forEach((seg, i) => {
+      seg.className = "";
+      if (i < score) {
+        if (score <= 2) seg.className = "active-weak";
+        else if (score === 3) seg.className = "active-mid";
+        else seg.className = "active-strong";
+      }
+    });
+
+    const labels = ["Terlalu pendek", "Lemah", "Lumayan", "Cukup kuat", "Kuat"];
+    strengthLabel.textContent = value.length === 0 ? "Minimal 8 karakter" : labels[score];
+  }
+
+  passwordInput.addEventListener("input", (e) => evaluateStrength(e.target.value));
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const konfirmasi = document.getElementById("konfirmasi").value;
+
+    if (!nama || !email || !password || !konfirmasi) {
+      showAlert("Mohon lengkapi semua kolom.", "error");
+      return;
+    }
+    if (password.length < 8) {
+      showAlert("Kata sandi minimal 8 karakter.", "error");
+      return;
+    }
+    if (password !== konfirmasi) {
+      showAlert("Konfirmasi kata sandi tidak cocok.", "error");
+      return;
+    }
+
+    const result = rkmRegister(nama, email, password);
+    if (!result.ok) {
+      showAlert(result.message, "error");
+      return;
+    }
+
+    showAlert("Akun berhasil dibuat! Mengalihkan ke halaman masuk…", "success");
+    form.reset();
+    evaluateStrength("");
+    setTimeout(() => { window.location.href = "login.html?registered=1"; }, 1400);
+  });
+</script>
+
+</body>
+</html>

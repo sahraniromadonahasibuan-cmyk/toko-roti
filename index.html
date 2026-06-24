@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roti Kayu Manis — Roti Segar Setiap Pagi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain-overlay"></div>
+
+<!-- ====== HEADER ====== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#beranda" class="logo">
+      <svg class="logo-mark" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 8C18 8 9 16 9 27c0 9 6 15 6 19 0 3 2 5 5 5h20c3 0 5-2 5-5 0-4 6-10 6-19 0-11-9-19-21-19z" fill="#C9772E"/>
+        <path d="M30 8C18 8 9 16 9 27c0 9 6 15 6 19 0 3 2 5 5 5h20c3 0 5-2 5-5 0-4 6-10 6-19 0-11-9-19-21-19z" stroke="#5A3825" stroke-width="2"/>
+        <path d="M22 23c2-3 6-3 8 0 2-3 6-3 8 0" stroke="#5A3825" stroke-width="2" stroke-linecap="round"/>
+        <line x1="20" y1="33" x2="40" y2="33" stroke="#5A3825" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+        <line x1="22" y1="39" x2="38" y2="39" stroke="#5A3825" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+      <span class="logo-text">Roti<br>Kayu&nbsp;Manis</span>
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle-btn" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="main-nav">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Cerita Kami</a>
+      <a href="#menu">Menu</a>
+      <a href="#proses">Proses</a>
+      <a href="#testimoni">Kata Pelanggan</a>
+      <a href="login.html" class="nav-login">Masuk</a>
+      <a href="#kontak" class="nav-cta">Pesan Sekarang</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section id="beranda" class="hero">
+  <div class="hero-steam" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="hero-inner">
+    <p class="eyebrow">Dipanggang sejak pukul 04.00 &mdash; Jakarta Selatan</p>
+    <h1 class="hero-title">
+      Roti yang<br>
+      <span class="hero-title-accent">hangatnya</span><br>
+      sampai ke hati.
+    </h1>
+    <p class="hero-sub">Adonan diragikan 18 jam, dipanggang di tungku batu, dan keluar dari oven tepat saat kamu datang. Tanpa pengawet, tanpa basa-basi.</p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn btn-primary">Lihat Menu Hari Ini</a>
+      <a href="#tentang" class="btn btn-ghost">Cerita Kami →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">04:00</span>
+        <span class="stat-label">Oven pertama menyala</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">18 jam</span>
+        <span class="stat-label">Fermentasi alami</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">0%</span>
+        <span class="stat-label">Pengawet buatan</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <svg viewBox="0 0 400 400" class="hero-bread-svg">
+      <ellipse cx="200" cy="330" rx="140" ry="18" fill="#5A3825" opacity="0.12"/>
+      <path d="M90 230C90 150 140 90 200 90C260 90 310 150 310 230C310 290 260 320 200 320C140 320 90 290 90 230Z" fill="#D98A3D"/>
+      <path d="M90 230C90 150 140 90 200 90C260 90 310 150 310 230C310 290 260 320 200 320C140 320 90 290 90 230Z" stroke="#7A4A22" stroke-width="3"/>
+      <path d="M140 150C160 130 180 175 200 150C220 125 240 170 260 150" stroke="#7A4A22" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M120 200C150 185 250 185 280 200" stroke="#7A4A22" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <path d="M115 245C150 230 250 230 285 245" stroke="#7A4A22" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+      <circle cx="160" cy="270" r="3" fill="#F0C419" opacity="0.8"/>
+      <circle cx="225" cy="280" r="3" fill="#F0C419" opacity="0.8"/>
+      <circle cx="200" cy="255" r="3" fill="#F0C419" opacity="0.8"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ====== TENTANG / CERITA ====== -->
+<section id="tentang" class="about">
+  <div class="about-inner">
+    <div class="about-image">
+      <svg viewBox="0 0 300 360" class="about-svg">
+        <rect x="10" y="10" width="280" height="340" rx="6" fill="#F2E4C9" stroke="#5A3825" stroke-width="3"/>
+        <circle cx="150" cy="140" r="70" fill="#E0993F" stroke="#5A3825" stroke-width="3"/>
+        <path d="M105 120c10-15 25-15 35 0" stroke="#5A3825" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M150 120c10-15 25-15 35 0" stroke="#5A3825" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <rect x="60" y="230" width="180" height="14" rx="7" fill="#C9772E"/>
+        <rect x="80" y="256" width="140" height="14" rx="7" fill="#C9772E" opacity="0.75"/>
+        <rect x="100" y="282" width="100" height="14" rx="7" fill="#C9772E" opacity="0.5"/>
+      </svg>
+      <span class="about-tag">Sejak 2014</span>
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow">Cerita Kami</p>
+      <h2 class="section-title">Berawal dari dapur rumah, kompor dua mata, dan ibu yang tidak pernah mau resepnya dipersingkat.</h2>
+      <p>Roti Kayu Manis dimulai bukan dari rencana bisnis, tapi dari aroma kayu manis yang menyelinap ke kamar tidur setiap subuh. Ibu kami menolak jalan pintas: tidak ada ragi instan berlebih, tidak ada adonan yang dipaksa cepat jadi.</p>
+      <p>Sepuluh tahun kemudian, prinsip itu masih sama. Setiap roti melewati fermentasi panjang, ditangani tangan, dan dipanggang dalam batch kecil supaya yang sampai ke meja kamu benar-benar pada masa terbaiknya.</p>
+      <ul class="about-points">
+        <li><strong>Bahan lokal pilihan</strong> — tepung dari penggilingan mitra di Jawa Barat, mentega segar tanpa campuran.</li>
+        <li><strong>Batch kecil, setiap hari</strong> — kami berhenti memanggang begitu roti hari itu habis, bukan menyetok untuk esok.</li>
+        <li><strong>Resep yang dijaga</strong> — diturunkan apa adanya, tanpa "versi cepat".</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MENU ====== -->
+<section id="menu" class="menu">
+  <div class="menu-head">
+    <p class="eyebrow">Menu Hari Ini</p>
+    <h2 class="section-title">Empat rak, satu prinsip: jangan terburu-buru.</h2>
+  </div>
+
+  <div class="menu-grid">
+
+    <article class="menu-card">
+      <div class="menu-card-visual" data-shape="sourdough">
+        <svg viewBox="0 0 160 160"><circle cx="80" cy="80" r="60" fill="#D98A3D" stroke="#5A3825" stroke-width="3"/><path d="M55 60c8-10 20-10 28 0M77 60c8-10 20-10 28 0" stroke="#5A3825" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="menu-card-body">
+        <span class="menu-rak">Rak 1 &mdash; Sourdough</span>
+        <h3>Sourdough Klasik</h3>
+        <p>Kerak renyah, isi berpori dengan rasa asam ringan dari starter alami berumur 6 tahun.</p>
+        <div class="menu-card-foot">
+          <span class="price">Rp 48.000</span>
+          <span class="badge">Fermentasi 18 jam</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-card">
+      <div class="menu-card-visual" data-shape="cinnamon">
+        <svg viewBox="0 0 160 160"><rect x="35" y="50" width="90" height="60" rx="16" fill="#C9772E" stroke="#5A3825" stroke-width="3"/><path d="M50 80h60M50 95h60" stroke="#5A3825" stroke-width="3" stroke-linecap="round" opacity="0.6"/></svg>
+      </div>
+      <div class="menu-card-body">
+        <span class="menu-rak">Rak 2 &mdash; Manis</span>
+        <h3>Gulungan Kayu Manis</h3>
+        <p>Resep asli sang pendiri toko: lapisan kayu manis-gula aren dan glasir vanila hangat.</p>
+        <div class="menu-card-foot">
+          <span class="price">Rp 22.000</span>
+          <span class="badge">Best seller</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-card">
+      <div class="menu-card-visual" data-shape="baguette">
+        <svg viewBox="0 0 160 160"><rect x="30" y="65" width="100" height="30" rx="15" fill="#E0993F" stroke="#5A3825" stroke-width="3"/><path d="M45 65v30M65 65v30M85 65v30M105 65v30" stroke="#5A3825" stroke-width="2" opacity="0.5"/></svg>
+      </div>
+      <div class="menu-card-body">
+        <span class="menu-rak">Rak 3 &mdash; Eropa</span>
+        <h3>Baguette Tradisional</h3>
+        <p>Empat sayatan tangan, kerak tipis bersuara saat dipatahkan, isi lembut beraroma gandum.</p>
+        <div class="menu-card-foot">
+          <span class="price">Rp 28.000</span>
+          <span class="badge">Tanpa gula</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-card">
+      <div class="menu-card-visual" data-shape="croissant">
+        <svg viewBox="0 0 160 160"><path d="M40 100c10-40 70-40 80 0c-20 10-60 10-80 0Z" fill="#F0C419" stroke="#5A3825" stroke-width="3"/></svg>
+      </div>
+      <div class="menu-card-body">
+        <span class="menu-rak">Rak 4 &mdash; Mentega</span>
+        <h3>Croissant Mentega</h3>
+        <p>27 lapis adonan, dilipat dua hari penuh, hasil akhir renyah lalu meleleh di mulut.</p>
+        <div class="menu-card-foot">
+          <span class="price">Rp 25.000</span>
+          <span class="badge">Limited 30/hari</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-card">
+      <div class="menu-card-visual" data-shape="rye">
+        <svg viewBox="0 0 160 160"><ellipse cx="80" cy="85" rx="55" ry="35" fill="#A8602E" stroke="#5A3825" stroke-width="3"/><line x1="40" y1="85" x2="120" y2="85" stroke="#5A3825" stroke-width="2.5" opacity="0.6"/></svg>
+      </div>
+      <div class="menu-card-body">
+        <span class="menu-rak">Rak 1 &mdash; Sourdough</span>
+        <h3>Rye Gandum Hitam</h3>
+        <p>Padat, gelap, kaya serat &mdash; teman terbaik untuk keju dan sup hangat di musim hujan.</p>
+        <div class="menu-card-foot">
+          <span class="price">Rp 35.000</span>
+          <span class="badge">Tinggi serat</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="menu-card">
+      <div class="menu-card-visual" data-shape="brioche">
+        <svg viewBox="0 0 160 160"><circle cx="65" cy="95" r="32" fill="#F0C419" stroke="#5A3825" stroke-width="3"/><circle cx="100" cy="75" r="20" fill="#F0C419" stroke="#5A3825" stroke-width="3"/></svg>
+      </div>
+      <div class="menu-card-body">
+        <span class="menu-rak">Rak 4 &mdash; Mentega</span>
+        <h3>Brioche Telur Madu</h3>
+        <p>Empuk seperti bantal, manis lembut dari madu hutan &mdash; favorit untuk sarapan anak-anak.</p>
+        <div class="menu-card-foot">
+          <span class="price">Rp 26.000</span>
+          <span class="badge">Disukai anak</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ====== PROSES ====== -->
+<section id="proses" class="proses">
+  <div class="proses-head">
+    <p class="eyebrow">Dari Tepung ke Meja Kamu</p>
+    <h2 class="section-title">Jam demi jam, begini hari kami dimulai.</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="timeline-time">03.00</span>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">
+        <h3>Adonan dibangunkan</h3>
+        <p>Starter sourdough yang sudah "tidur" semalaman dicampur dengan tepung dan air bersuhu ruang.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-time">04.00</span>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">
+        <h3>Tungku batu mulai dipanaskan</h3>
+        <p>Butuh 45 menit agar batu tungku mencapai suhu yang tepat untuk kerak yang renyah merata.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-time">06.00</span>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">
+        <h3>Pembentukan tangan</h3>
+        <p>Setiap roti dibentuk satu per satu, tanpa cetakan massal, agar pori udara tetap alami.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-time">07.30</span>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">
+        <h3>Roti pertama keluar oven</h3>
+        <p>Aromanya tercium dari ujung gang &mdash; tanda toko sudah buka dan rak mulai terisi.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-time">17.00</span>
+      <div class="timeline-dot"></div>
+      <div class="timeline-text">
+        <h3>Rak ditutup, bukan distok</h3>
+        <p>Sisa roti hari itu didonasikan ke panti asuhan terdekat &mdash; kami tidak menjual roti kemarin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TESTIMONI ====== -->
+<section id="testimoni" class="testimoni">
+  <p class="eyebrow center">Kata Pelanggan</p>
+  <h2 class="section-title center">Bukan kami yang bilang, mereka yang rasa.</h2>
+  <div class="testimoni-grid">
+    <figure class="testimoni-card">
+      <blockquote>"Sourdough-nya benar-benar beda. Keraknya bersuara waktu dipatahkan, dan rasa asamnya pas, tidak berlebihan."</blockquote>
+      <figcaption>— Dewi A., pelanggan sejak 2019</figcaption>
+    </figure>
+    <figure class="testimoni-card">
+      <blockquote>"Gulungan kayu manisnya jadi ritual akhir pekan keluarga saya. Anak-anak selalu rebutan yang masih hangat."</blockquote>
+      <figcaption>— Bagas P., pelanggan tetap</figcaption>
+    </figure>
+    <figure class="testimoni-card">
+      <blockquote>"Saya suka kalau mereka tutup begitu roti habis. Artinya yang saya beli memang dipanggang hari itu juga."</blockquote>
+      <figcaption>— Nadia R., food blogger</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ====== KONTAK / PESAN ====== -->
+<section id="kontak" class="kontak">
+  <div class="kontak-inner">
+    <div class="kontak-copy">
+      <p class="eyebrow">Pesan & Kunjungi</p>
+      <h2 class="section-title">Datang pagi, atau titip pesan dulu.</h2>
+      <p>Untuk acara, pesanan dalam jumlah besar, atau sekadar reservasi roti favoritmu sebelum kehabisan, hubungi kami lewat salah satu cara di bawah.</p>
+      <div class="kontak-list">
+        <div class="kontak-item">
+          <span class="kontak-label">Alamat</span>
+          <span>Jl. Kemang Raya No. 12, Jakarta Selatan</span>
+        </div>
+        <div class="kontak-item">
+          <span class="kontak-label">Jam Buka</span>
+          <span>Selasa&ndash;Minggu, 07.30 &ndash; selama roti masih ada</span>
+        </div>
+        <div class="kontak-item">
+          <span class="kontak-label">Telepon / WhatsApp</span>
+          <span>0812-3456-7890</span>
+        </div>
+      </div>
+    </div>
+    <form class="kontak-form" onsubmit="return false;">
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" placeholder="Nama kamu" required>
+
+      <label for="telepon">No. Telepon / WhatsApp</label>
+      <input type="tel" id="telepon" name="telepon" placeholder="08xx-xxxx-xxxx" required>
+
+      <label for="pesan">Pesanan</label>
+      <textarea id="pesan" name="pesan" rows="4" placeholder="Contoh: 2 Sourdough Klasik, 1 Gulungan Kayu Manis, ambil besok pagi"></textarea>
+
+      <button type="submit" class="btn btn-primary btn-full">Kirim Pesanan</button>
+      <p class="form-note">Tombol ini demo statis untuk keperluan tugas &mdash; pesanan tidak benar-benar terkirim.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text small">Roti Kayu Manis</span>
+      <p>Dipanggang dengan sabar, sejak 2014.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#beranda">Beranda</a>
+      <a href="#menu">Menu</a>
+      <a href="#proses">Proses</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Roti Kayu Manis. Dibuat untuk keperluan tugas Ujian Akhir Semester.</p>
+</footer>
+
+</body>
+</html>

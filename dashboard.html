@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Roti Kayu Manis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .dash-wrap{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+    min-height: 60vh;
+  }
+  .dash-card{
+    background: #fff;
+    border-radius: var(--radius-l);
+    padding: clamp(2rem, 4vw, 3rem);
+    box-shadow: var(--shadow-card);
+  }
+  .dash-greet{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .dash-avatar{
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--honey), var(--caramel));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .dash-greet h1{
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    margin: 0 0 0.2rem;
+    color: var(--brown);
+  }
+  .dash-greet p{ margin: 0; color: var(--brown-soft); font-size: 0.92rem; }
+  .dash-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .dash-stat{
+    background: var(--cream-deep);
+    border-radius: var(--radius-m);
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .dash-stat strong{
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--caramel);
+  }
+  .dash-stat span{ font-size: 0.8rem; color: var(--brown-soft); }
+  .dash-actions{ display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  @media (max-width: 600px){ .dash-grid{ grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="grain-overlay"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 8C18 8 9 16 9 27c0 9 6 15 6 19 0 3 2 5 5 5h20c3 0 5-2 5-5 0-4 6-10 6-19 0-11-9-19-21-19z" fill="#C9772E"/>
+        <path d="M30 8C18 8 9 16 9 27c0 9 6 15 6 19 0 3 2 5 5 5h20c3 0 5-2 5-5 0-4 6-10 6-19 0-11-9-19-21-19z" stroke="#5A3825" stroke-width="2"/>
+        <path d="M22 23c2-3 6-3 8 0 2-3 6-3 8 0" stroke="#5A3825" stroke-width="2" stroke-linecap="round"/>
+        <line x1="20" y1="33" x2="40" y2="33" stroke="#5A3825" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+        <line x1="22" y1="39" x2="38" y2="39" stroke="#5A3825" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+      <span class="logo-text">Roti<br>Kayu&nbsp;Manis</span>
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <label for="menu-toggle" class="menu-toggle-btn" aria-label="Buka menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="main-nav">
+      <a href="index.html#beranda">Beranda</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#kontak">Kontak</a>
+      <a href="#" id="logoutBtn" class="nav-cta">Keluar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="dash-wrap">
+  <div class="dash-card">
+    <div class="dash-greet">
+      <div class="dash-avatar" id="avatarInitial">?</div>
+      <div>
+        <h1 id="greetName">Halo!</h1>
+        <p id="greetEmail">memuat…</p>
+      </div>
+    </div>
+
+    <p style="color: var(--brown-soft);">Selamat datang kembali di Roti Kayu Manis. Ini ruang akun pribadimu — dari sini kamu bisa memantau aktivitas pemesanan (demo).</p>
+
+    <div class="dash-grid">
+      <div class="dash-stat"><strong>3</strong><span>Pesanan selesai</span></div>
+      <div class="dash-stat"><strong>1</strong><span>Pesanan diproses</span></div>
+      <div class="dash-stat"><strong>120</strong><span>Poin loyalitas</span></div>
+    </div>
+
+    <div class="dash-actions">
+      <a href="index.html#menu" class="btn btn-primary">Pesan Roti Lagi</a>
+      <a href="#" id="logoutLink" class="btn btn-ghost">Keluar dari Akun</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text small">Roti Kayu Manis</span>
+      <p>Dipanggang dengan sabar, sejak 2014.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#beranda">Beranda</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#kontak">Kontak</a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Roti Kayu Manis. Dibuat untuk keperluan tugas Ujian Akhir Semester.</p>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+  // Lindungi halaman ini: kalau belum login, lempar ke login.html
+  const session = rkmRequireLogin("login.html");
+
+  if (session) {
+    document.getElementById("greetName").textContent = "Halo, " + session.nama + "!";
+    document.getElementById("greetEmail").textContent = session.email;
+    document.getElementById("avatarInitial").textContent = session.nama.trim().charAt(0).toUpperCase() || "?";
+  }
+
+  function doLogout(e) {
+    e.preventDefault();
+    rkmLogout();
+    window.location.href = "login.html";
+  }
+
+  document.getElementById("logoutBtn").addEventListener("click", doLogout);
+  document.getElementById("logoutLink").addEventListener("click", doLogout);
+</script>
+
+</body>
+</html>
